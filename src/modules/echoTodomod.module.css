@@ -1,0 +1,102 @@
+.TableTodo {
+    display: flex;
+    flex-wrap: wrap;
+}
+.TableTodo > thead > tr:first-child{
+    display: flex;
+    gap: 10px;
+}
+.TableTodo > * {
+    width: 100%;
+}
+.TableTodo thead {
+    padding: 15px;
+    user-select: none;
+    margin-bottom: 20px;
+}
+.TableTodo thead tr label {
+    display: block;
+}
+.TableTodo thead tr label input {
+    margin-left: 10px;
+}
+.TableTodo thead tr:first-child button {
+    margin-bottom: 10px;
+}
+.TableTodo > tbody > tr {
+    display: grid;
+    margin-bottom: 20px;
+}
+.TableTodo tr > th:first-child {
+    text-align: left;
+}
+.TableTodo [type="checkbox"]{
+    margin-right: 10px;
+}
+.TableTodo tr.firstTr > td:first-child {
+    display: grid;
+    grid-template-rows: 30px calc(100% - 30px)
+}
+.TableTodo tr.firstTr > td:first-child > div span:first-of-type {
+    color: #767474;
+}
+
+.TableTodo tr.firstTr > td:first-child > div span {
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+}
+.titleStory{
+    position: relative;
+    font-size: 13px;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+    white-space: nowrap;
+    cursor: auto !important;
+}
+.removeTitle{
+    content: "x";
+    margin: 3px;
+    background: #d3d1c4;
+    color: #31302d;
+    position: absolute;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    top: -2px;
+    right: 0;
+    line-height: 0.9;
+    cursor: pointer;
+    opacity: 0;
+    transition: 200ms;
+}
+.tableItems{
+    width: 100%;
+    padding: 0px 20px 0px 50px;
+}
+.tableItems tr {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.defaultText {
+    font-size: 20px;
+    font-weight: 600;
+    color: #867f7f;
+    padding: 30px 10px;
+    user-select: none;
+}
+/* Start Media Query */
+@media screen and (max-width: 399px){
+    .tableItems {
+        padding: 0px 10px 0px 20px;
+    }
+    .TableTodo thead tr:last-child {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+/* End Media Query */

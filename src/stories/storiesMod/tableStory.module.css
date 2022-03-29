@@ -1,0 +1,151 @@
+.opacity{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff8c;
+    z-index: 98;
+    opacity: 0;
+    transition:500ms;
+}
+.tableStory {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    min-width: 300px;
+    width: 30%;
+    height: 80vh;
+    background: #d3f5ff;
+    z-index: 99;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+}
+.tableStory > div:first-child {
+    height: 85%;
+}
+.tableStory > .addstoryTodo {
+    width: 60%;
+}
+.tableStory .storiesHome{
+    width: 100%;
+    border-radius: 10px;
+    background: radial-gradient(circle at bottom center, #b54bc7 15px, #d84f7a);
+    color: white;
+    height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.tableStory .storiesHome img {
+    width: 80px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 500ms;
+}
+.tableStory .storiesHome p {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    user-select: none;
+}
+.tableStory > .stories {
+    width: 100%;
+    padding: 15px;
+}
+.tableStory .stories ul {
+    padding: 0;
+}
+.tableStory .stories > ul {
+    color: white;
+    font-weight: bold;
+}
+.tableStory .stories > ul > li{
+    margin-bottom: 10px;
+}
+.tableStory .stories > ul > li:first-child {
+    background-color: #8688D1;
+    padding: 10px;
+    text-align:center
+}
+.tableStory .stories > ul > li ul li {
+    background-color: #E5E0F6;
+    min-height: 35px;
+    font-size: 14px;
+    color: #795548;
+    padding: 10px 10px 0px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.tableStory .stories > ul p {
+    text-decoration-color: red ;
+    margin: 0;
+    word-break: break-word;
+}
+.showingTodo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.showingTodo > ul {
+    width: 100%;
+    height: 84%;
+    margin: 0 8px 0 10px;
+    padding: 0 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.showingTodo > ul::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+.showingTodo > ul::-webkit-scrollbar {
+    width: 8px;
+}
+.showingTodo > ul::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background:#afafaf;
+}
+
+.showingTodo > ul > p {
+    margin: auto;
+}
+.showingTodo li {
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 13px;
+    border-radius: 4px;
+    user-select: none;
+    overflow: hidden;
+    word-break: break-word;
+    background: rgb(255 255 255);
+    color: #8c8484;
+}
+.showingTodo li > input {
+    margin-right: 12px;
+    cursor: pointer;
+}
+.showingTodo button {
+    width: 65px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    border: none;
+    padding: 4px;
+    color: #4b4f57;
+}

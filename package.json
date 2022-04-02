@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
   "version": "0.0.0",
-  "homepage": "https://msaad022.github.io/todo-app/",
+  "homepage": "https://msaad022.github.io/todo-pro/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

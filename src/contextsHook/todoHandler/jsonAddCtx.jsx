@@ -1,4 +1,4 @@
-const JsonAddCtx = (props,increment) => {
+const JsonAddCtx = (titleProps, textProps, increment) => {
 
     const date = new Date();
     let dataList = {
@@ -7,11 +7,13 @@ const JsonAddCtx = (props,increment) => {
         storyBool: false,
         created : "Time : " +  date.toDateString() + ' ' + date.toLocaleTimeString(),
         update : 'No Update Yet ^_^' ,
-        text : props.current.value,
+        title: titleProps.current.value,
+        text : textProps.current.value,
         items: []
     }
 
-    props.current.value = null
+    titleProps.current.value = null
+    textProps.current.value = null
     return dataList
 }
 

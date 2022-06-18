@@ -9,8 +9,8 @@ let  idDel = []
 
 function EchoTodo () {
     
-    const [{deletTodoHandler,updateTodoHandler,isCompletedItem,getTitleStory,removeTitleStory},{todoData}]=  GetDataTodo()
-    const [array,pageNumber,pagination] = Pagination(todoData,3)
+    const [{deletTodoHandler,updateTodoHandler,isCompletedItem,getTitleStory,removeTitleStory},{todoData},{valuesUpdateing}]=  GetDataTodo()
+    const [array,pageNumber,pagination] = Pagination(todoData,15)
 
     const isCheckedOneHandler = (e) => {
         let thisInput = e.target
@@ -32,19 +32,22 @@ function EchoTodo () {
     useEffect( () => { idDel = [] },[pageNumber])
 
     return (
-        <div className = {EchoTodomod.ParentTable}>
-            <table className = {EchoTodomod.TableTodo}>
+        <div>
+            <section className = {EchoTodomod.TableTodo}>
                 <TableHead  falsecheckbox = {falseCheckboxHandler}
                             updatetodo  = {updateTodoHandler} 
                             delettodo   = {deletTodoHandler}
+                            classes={EchoTodomod}
+                            valuesupdateing={valuesUpdateing}
                             iddel       = {itsidDel} />
                 <TableBody 
                     gettitlestory = {getTitleStory}
                     removetitlestory={removeTitleStory}
                     tododata= {array}
                     iscompleted= {isCompletedItem}
+                    classes={EchoTodomod}
                     ischeckedone= {isCheckedOneHandler} />
-            </table>
+            </section>
             {todoData != '' && pagination}
         </div>
     )

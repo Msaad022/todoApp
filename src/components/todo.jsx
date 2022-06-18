@@ -1,6 +1,6 @@
 import TodoCtxProvider from '../contextsHook/index_TodoCtx'
 import Todomod from '../modules/todomod.module.css'
-import IndexCreatTodo from "./callbackTodo/index_CreatTodo"
+import IndexCreateTodo from "./callbackTodo/index_CreateTodo"
 import IndexEchoTodo from './echoTodo/index_EchoTodo'
 import Stories from '../stories/stories'
 import {
@@ -18,8 +18,8 @@ function Todo () {
                     <NavBar/>
                     <TodoCtxProvider>
                         <Routes>
-                            <Route path="/todo-app/stories" element={<Stories />} />
-                            <Route path="/todo-app/*" element={<TodoRoute />} />
+                            <Route path="/*" element={<TodoRoute />} />
+                            <Route path="/stories" element={<Stories />} />
                         </Routes>
                     </TodoCtxProvider>
                 </BrowserRouter>
@@ -28,7 +28,7 @@ function Todo () {
 }
 const TodoRoute = ()=>{
     return(
-        <div className={Todomod.Content}><IndexCreatTodo /><IndexEchoTodo/></div>
+        <div className={Todomod.Content}><IndexCreateTodo /><IndexEchoTodo/></div>
     )
 }
 const NavBar = (props) => {
@@ -36,8 +36,8 @@ const NavBar = (props) => {
         <div className={Todomod.navbar}>
             <div>بسم الله الرحمن الرحيم</div>
             <div>
-                <Link to='/todo-app/todo'>Todo</Link>
-                <Link to='/todo-app/stories'>Stories</Link>
+                <Link to='/'>Todo</Link>
+                <Link to='/stories'>Stories</Link>
             </div>
         </div>
     )

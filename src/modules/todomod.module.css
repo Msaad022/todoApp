@@ -1,33 +1,68 @@
 .Content{
-    width: 40vw;
     display: flex;
-    background-color: #ffdfec82;
-    padding: 15px;
+    padding: 15px 25px;
     margin: auto;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 .Content > div{
     width: 100%;
 }
-.AddTodo{
+.Banner {
+    padding: 30px 10px;
+    background: white;
+}
+.Banner > button{
+    padding: 10px 12px;
+    background: #6d85df;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+.AddTodo {
     text-align: center;
     margin-bottom: 40px;
 }
 .TodoMine {
-    display: flex;
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    height: 100vh;
+    padding: 0px 20px;
+    display: grid;
+    grid-template-rows: 37% 63%;
+    background: rgb(145 148 162 / 76%);
+    z-index: 2;
     justify-content: center;
+    transition: 500ms;
+    opacity: 0;
+}
+.TodoMine > header ,.TodoMine > section {
+    width: 58vw;
+    min-width: 289px;
+    max-width: 560px;
+}
+.cancel {
+    background: #e22626;
+    font-size: 22px;
+    color: white;
+    font-weight: 700;
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    z-index: 3;
+    display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
-}
-.TodoMine > *{
-    width: 100%;
-}
-.TodoMine header {
-    min-height: 100px;
+    justify-content: center;
+    position: absolute;
+    right: 100px;
+    top: 40px;
+    user-select: none;
+    cursor: pointer;
 }
 .Actions{
     display: flex;
@@ -39,16 +74,20 @@
     width: 100%;
     text-align: left;
 }
-.TodoValue {
-    margin: 30px 0;
+.TodoValue > input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
 }
 .TodoValue > textarea{
-    width: 75%;
+    width: 100%;
     height: 170px;
     resize: unset;
     border-radius: 5px;
     padding: 5px;
     border: 1px solid #CCC;
+    margin-bottom: 30px;
 }
 .navbar{
     width: 100%;
@@ -88,7 +127,7 @@
 }
 @media screen and (max-width: 999px) and (min-width: 751px){
     .Content {
-        width: 50vw;
+        width: 80vw;
     }
 }
 @media screen and (max-width: 750px) and (min-width: 400px) {
@@ -99,7 +138,7 @@
         width: 70vw;
     }
 }
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 500px) {
     .navbar {
         grid-template-columns: none;
         grid-template-rows: 50% 50%;

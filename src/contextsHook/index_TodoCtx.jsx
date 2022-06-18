@@ -11,7 +11,7 @@ import EditStory from "./storiesHandler/editStory"
 export const TodoCtxHook = react.createContext(0)
 TodoCtxHook.displayName  = 'Todo Context'
 
-let idUpdate= ''
+let idUpdate = ''
 
 const TodoCtxProvider = (props) => {
 
@@ -32,13 +32,14 @@ const TodoCtxProvider = (props) => {
     //         isCompleted: false,
     //         key: 1 +65
     //     }]
-    // }]
+    // }];
+    
     let initialValues = []
 
     let initialStorage = storageClass.isfound('todoData',initialValues)
     const [todosCnt,setTodoData] = useState({todoData: initialStorage})
     // ----------------------
-    const initialValuesUpdate = { textTodoButton:'Todo' ,valueTextarea: '' ,valueItems: '' }
+    const initialValuesUpdate = { textTodoButton:'Todo', valueTitle:'', valueTextarea: '', valueItems: '' }
     const [updateValue,setUpdateValue] = useState({valuesUpdateing:initialValuesUpdate})
     // ----------------------
     const initialValuesStories = storageClass.isfound('stories', [{ id: 1, title: "Change title", todos: ['1'] }])
@@ -68,31 +69,32 @@ const TodoCtxProvider = (props) => {
     }
 
     const updateTodoHandler = (idUpdated) => {
-        let arr = todosCnt['todoData'] ,oldValue = '',items
+        let arr = todosCnt['todoData'] ,oldTitle='', oldText= '',items
         idUpdate =  idUpdated[0]
         for (let i = 0; i < arr.length; i++)
             if(arr[i].id ==  idUpdate){
                 items = arr[i].items
-                oldValue = arr[i].text
+                oldTitle = arr[i].title || 'Change Title'
+                oldText = arr[i].text
             }
 
-        setUpdateValue({valuesUpdateing : { textTodoButton: 'update' ,valueTextarea: oldValue ,valueItems: items } })
+        setUpdateValue({valuesUpdateing : { textTodoButton: 'update', valueTitle: oldTitle, valueTextarea: oldText, valueItems: items }})
         return []
     }
 
-    const setTodoHandler = (textarea) => {
+    const setTodoHandler = (titleProps, textProps) => {
         let word = updateValue.valuesUpdateing.textTodoButton
         if(word == "update"){
 
             let takeItFromMe = TakeItFromMe()
-            setTodoData({todoData:JsonUpdateCtx(todosCnt,idUpdate,textarea,takeItFromMe)})
+            setTodoData({todoData:JsonUpdateCtx(todosCnt,idUpdate,titleProps,textProps,takeItFromMe)})
             setUpdateValue({valuesUpdateing: initialValuesUpdate })
         }else{
 
             let idIncrement = IdUnique(todosCnt.todoData)
             setTodoData({todoData:[
                     ...todosCnt.todoData ,
-                    JsonAddCtx(textarea,idIncrement)
+                    JsonAddCtx(titleProps,textProps,idIncrement)
                 ]
             })
         }

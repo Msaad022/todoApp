@@ -1,50 +1,61 @@
-.TableTodo {
+.headerControll {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px 25px;
+    margin-top: 13px;
 }
-.TableTodo > thead > tr:first-child{
-    display: flex;
-    gap: 10px;
-}
-.TableTodo > * {
-    width: 100%;
-}
-.TableTodo thead {
-    padding: 15px;
-    user-select: none;
-    margin-bottom: 20px;
-}
-.TableTodo thead tr label {
-    display: block;
-}
-.TableTodo thead tr label input {
-    margin-left: 10px;
-}
-.TableTodo thead tr:first-child button {
-    margin-bottom: 10px;
-}
-.TableTodo > tbody > tr {
+.container{
     display: grid;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
 }
-.TableTodo tr > th:first-child {
+.headerControll > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    padding: 10px;
+}
+.box{
+    background: white;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    border: 12px solid transparent;
+    border-top: 2px solid #607d8b;
+    border-radius: 8px;
     text-align: left;
 }
-.TableTodo [type="checkbox"]{
-    margin-right: 10px;
+.titleTask{
+    text-align: left;
+    height: max-content;
+    margin: 10px 0px;
 }
-.TableTodo tr.firstTr > td:first-child {
-    display: grid;
-    grid-template-rows: 30px calc(100% - 30px)
+.titleTask > p{
+    margin: 0;
+    background: #607d8b;
+    padding: 5px 8px;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
 }
-.TableTodo tr.firstTr > td:first-child > div span:first-of-type {
-    color: #767474;
+.textTask > p {
+    max-height: 80px;
+    overflow: hidden;
+    margin: 18px 0;
+    text-align: center;
+    word-break: break-word;
 }
-
-.TableTodo tr.firstTr > td:first-child > div span {
-    cursor: pointer;
+.headBox {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.headBox > span:first-of-type {
+    margin-left: 8px;
     user-select: none;
-    font-weight: 600;
 }
 .titleStory{
     position: relative;
@@ -52,35 +63,36 @@
     width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-left: 10px;
     white-space: nowrap;
     cursor: auto !important;
+    margin-left: 10px;
 }
-.removeTitle{
-    content: "x";
-    margin: 3px;
-    background: #d3d1c4;
-    color: #31302d;
-    position: absolute;
-    text-align: center;
+.titleStory > span {
+    float: right;
+    opacity: 0;
     width: 15px;
     height: 15px;
-    top: -2px;
-    right: 0;
-    line-height: 0.9;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    background: rgb(109, 133, 223);
     cursor: pointer;
-    opacity: 0;
-    transition: 200ms;
+    user-select: none;
 }
-.tableItems{
-    width: 100%;
-    padding: 0px 20px 0px 50px;
+.listTasks {
+    padding-left: 17px;
 }
-.tableItems tr {
+.listTasks > div{
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 10px;
+    margin: 10px 0;
     align-items: center;
+}
+.listTasks > div > input{
+    margin-right: 10px;
+}
+.listTasks > div > label {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .defaultText {
     font-size: 20px;
@@ -90,7 +102,7 @@
     user-select: none;
 }
 /* Start Media Query */
-@media screen and (max-width: 399px){
+@media screen and (max-width: 500px){
     .tableItems {
         padding: 0px 10px 0px 20px;
     }
@@ -99,4 +111,4 @@
         flex-wrap: wrap;
     }
 }
-/* End Media Query */
+/* End Media Query  */

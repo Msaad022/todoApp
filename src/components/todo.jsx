@@ -35,6 +35,7 @@ const NavBar = (props) => {
     return(
         <div className={Todomod.navbar}>
             <div>بسم الله الرحمن الرحيم</div>
+            <p>dppppppppppppppppppppppppppppppppp</p>
             <div>
                 <Link to='/'>Todo</Link>
                 <Link to='/stories'>Stories</Link>

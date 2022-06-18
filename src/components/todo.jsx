@@ -2,7 +2,9 @@ import TodoCtxProvider from '../contextsHook/index_TodoCtx'
 import Todomod from '../modules/todomod.module.css'
 import IndexCreateTodo from "./callbackTodo/index_CreateTodo"
 import IndexEchoTodo from './echoTodo/index_EchoTodo'
+import { HashRouter } from 'react-router-dom'
 import Stories from '../stories/stories'
+
 import {
         BrowserRouter,
         Routes,
@@ -14,15 +16,16 @@ function Todo () {
 
     return (
         <>
-                {/* <BrowserRouter> */}
-                    <NavBar/>
-                    <TodoCtxProvider>
-                        <Routes>
-                            <Route path="/*" element={<TodoRoute />} />
-                            <Route path="/stories" element={<Stories />} />
-                        </Routes>
-                    </TodoCtxProvider>
-                {/* </BrowserRouter> */}
+            <HashRouter>
+                <NavBar/>
+                <TodoCtxProvider>
+                    <Routes>
+                        <Route path="/*" element={<TodoRoute />} />
+                        <Route path="/stories" element={<Stories />} />
+                    </Routes>
+                </TodoCtxProvider>
+            </HashRouter>
+
         </>
     )
 }

@@ -15,7 +15,7 @@ let idUpdate = ''
 
 const TodoCtxProvider = (props) => {
 
-    // let initialValues = [{ 
+    // let initialValues = [{
     //     id: 1,
     //     story: [1,1],
     //     storyBool: true,
@@ -33,7 +33,7 @@ const TodoCtxProvider = (props) => {
     //         key: 1 +65
     //     }]
     // }];
-    
+
     let initialValues = []
 
     let initialStorage = storageClass.isfound('todoData',initialValues)
@@ -42,9 +42,9 @@ const TodoCtxProvider = (props) => {
     const initialValuesUpdate = { textTodoButton:'Todo', valueTitle:'', valueTextarea: '', valueItems: '' }
     const [updateValue,setUpdateValue] = useState({valuesUpdateing:initialValuesUpdate})
     // ----------------------
-    const initialValuesStories = storageClass.isfound('stories', [{ id: 1, title: "Change title", todos: ['1'] }])
+    const initialValuesStories = storageClass.isfound('stories', [{ id: 1, title: "Change title", todos: [] }])
     const [valState,setValState] = useState({stories: initialValuesStories })
-    
+
     //-------------------- Todo Handler -----------
 
     const resetTodoHandler = (indexs) => {
@@ -104,7 +104,7 @@ const TodoCtxProvider = (props) => {
         setTodoData({todoData:ItemIsCompleted(todosCnt,index)})
     }
 
-    const getTitleStory = (index) => { 
+    const getTitleStory = (index) => {
         let arr = valState.stories
         for(let x in arr){
             if(index == arr[x].id){
@@ -132,12 +132,12 @@ const TodoCtxProvider = (props) => {
             ]
         });
     };
-    
+
     const changeTitleHandler = (e) => {
         let textChange = prompt("Hellow , Change Story Title ^_^ ");
         let index = e.target.getAttribute("data-index");
         let arr = valState.stories;
-    
+
         if (textChange != null && textChange != "") {
             arr[index].title = textChange;
             setValState({ stories: arr });
@@ -160,7 +160,7 @@ const TodoCtxProvider = (props) => {
             }, 50);
         }
     };
-    
+
     const addTodoStory = (arrIDs,indexStory) => {
         let array =  todosCnt.todoData
         let arrayStory = valState.stories

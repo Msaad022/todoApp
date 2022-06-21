@@ -11,6 +11,7 @@
     border-radius: 5px;
     padding: 5px;
     border: 1px solid #CCC;
+    margin-bottom: 10px;
 }
 .rainbow {
     display: flex;

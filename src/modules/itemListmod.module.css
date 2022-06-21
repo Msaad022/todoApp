@@ -6,6 +6,11 @@
 .ItemList > textarea {
     width: 80%;
     margin-right: 20px;
+    resize: unset;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #CCC;
 }
 .rainbow {
     display: flex;

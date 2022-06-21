@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .ItemList > textarea {
     width: 80%;
@@ -11,7 +12,6 @@
     border-radius: 5px;
     padding: 5px;
     border: 1px solid #CCC;
-    margin-bottom: 10px;
 }
 .rainbow {
     display: flex;
